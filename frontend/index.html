@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        LexAI • Legal Intelligence
+    </title>
+
+    <!-- FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- MARKDOWN -->
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- MAIN CHAT -->
+
+        <div class="chat-container">
+
+            <!-- HEADER -->
+
+            <div class="chat-header">
+
+                <div>
+
+                    <h1>
+                        ⚖ LexAI
+                    </h1>
+
+                    <span>
+                        Conversational Legal Intelligence
+                    </span>
+
+                </div>
+
+                <button
+                    onclick="clearChat()"
+                    class="new-chat-btn"
+                >
+
+                    New Chat
+
+                </button>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div
+                id="uploadStatus"
+                style="
+                    padding: 10px 28px;
+                    color: #93c5fd;
+                    font-size: 14px;
+                "
+            ></div>
+
+
+            <!-- CHAT BOX -->
+
+            <div
+                class="chat-box"
+                id="chatBox"
+            >
+
+                <div class="bot-message">
+
+                    <strong>
+                        Welcome to LexAI
+                    </strong>
+
+                    <br><br>
+
+                    Upload legal PDFs and ask questions naturally.
+
+                    <br><br>
+
+                    Examples:
+
+                    <br><br>
+
+                    • Summarize this case
+
+                    <br>
+
+                    • What was the final judgement?
+
+                    <br>
+
+                    • Explain the contract terms
+
+                    <br>
+
+                    • Who is Cristiano Ronaldo?
+
+                </div>
+
+            </div>
+
+
+            <!-- FILE PILL -->
+
+            <div
+                id="filePill"
+                class="file-pill"
+                style="display: none;"
+            >
+
+                <span id="fileName">
+
+                    No file selected
+
+                </span>
+
+                <button onclick="removeSelectedFile()">
+
+                    ✕
+
+                </button>
+
+            </div>
+            
+            <!-- UPLOADED FILES -->
+
+            <div id="uploadedFilesContainer"></div>
+
+            <!-- INPUT AREA -->
+
+            <div class="input-area">
+
+                <div class="input-wrapper">
+
+                    <!-- UPLOAD ICON -->
+
+                    <label
+                        for="pdfUpload"
+                        class="upload-icon"
+                    >
+
+                        +
+
+                    </label>
+
+                    <!-- HIDDEN FILE INPUT -->
+
+                    <input
+                        type="file"
+                        id="pdfUpload"
+                        multiple
+                        hidden
+                    >
+
+                    <!-- QUESTION INPUT -->
+
+                    <input
+                        type="text"
+                        id="questionInput"
+                        placeholder="Ask anything..."
+                    >
+
+                    <!-- SEND -->
+
+                    <button onclick="sendQuestion()">
+
+                        Send
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
