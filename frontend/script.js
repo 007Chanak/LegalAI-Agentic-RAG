@@ -1,5 +1,5 @@
 const API_BASE =
-"http://127.0.0.1:8000";
+"http://13.204.224.253:8000";
 
 let pdfUploaded = false;
 
